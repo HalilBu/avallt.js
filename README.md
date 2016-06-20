@@ -1,1 +1,1 @@
-# avallt.js
+# avalltJS
