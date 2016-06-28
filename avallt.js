@@ -3,20 +3,62 @@
     var addFn = function(fnName, fn) {
         window.avalltJS[fnName] = fn;
     }
-    var diff = function(object1, object2) {
-        var propertiesOf1 = [],
-            propertiesOf2 = [];
 
-        for (var property in object1) {
-            if (object1.hasOwnProperty(property)) {
-                propertiesOf1.push(property);
+    /**
+     * Analyses the diff between given objects
+     *
+     * @param  {Object} objectL
+     * @param  {Object} objectR
+     * @return {Object} calculated diff information about the given objects
+     */
+    var diff = function(objectL, objectR) {
+        var propertiesOfLeft = [],
+            propertiesOfRight = [],
+            missingPropertiesLeft = [],
+            missingPropertiesRight = [];
+
+        for (var property in objectL) {
+            if (objectL.hasOwnProperty(property)) {
+                propertiesOfLeft.push(property);
             }
         }
 
-        for (var property in object2) {
-            if (object2.hasOwnProperty(property)) {
-                propertiesOf2.push(property);
+        for (var property in objectR) {
+            if (objectR.hasOwnProperty(property)) {
+                propertiesOfRight.push(property);
             }
+        }
+        var propertyExistsInList = function(property, list) {
+            for (var j = 0; j < list.length; j++) {
+                if (property === list[j]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        for (var i = 0; i < propertiesOfLeft.length; i++) {
+            var property = propertiesOfLeft[i];
+
+            if (propertyExistsInList(property, propertiesOfRight) === false) {
+                missingPropertiesLeft.push(property);
+            }
+        }
+
+        for (var i = 0; i < propertiesOfRight.length; i++) {
+            var property = propertiesOfRight[i];
+
+            if (propertyExistsInList(property, propertiesOfLeft) === false) {
+                missingPropertiesRight.push(property);
+            }
+        }
+
+        return {
+            propsLeft: propertiesOfLeft,
+            propsRight: propertiesOfRight,
+            missingPropsLeft: missingPropertiesLeft,
+            missingPropsRight: missingPropertiesRight
         }
     }
+    addFn('diff', diff);
 })()
