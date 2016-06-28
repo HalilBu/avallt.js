@@ -15,7 +15,8 @@
         var propertiesOfLeft = [],
             propertiesOfRight = [],
             missingPropertiesLeft = [],
-            missingPropertiesRight = [];
+            missingPropertiesRight = [],
+            valuesDiff = [];
 
         for (var property in objectL) {
             if (objectL.hasOwnProperty(property)) {
@@ -50,6 +51,12 @@
 
             if (propertyExistsInList(property, propertiesOfLeft) === false) {
                 missingPropertiesRight.push(property);
+            } else {
+                valuesDiff.push({
+                    property: property,
+                    left: objectL[property],
+                    right: objectR[property]
+                });
             }
         }
 
@@ -57,7 +64,8 @@
             propsLeft: propertiesOfLeft,
             propsRight: propertiesOfRight,
             missingPropsLeft: missingPropertiesLeft,
-            missingPropsRight: missingPropertiesRight
+            missingPropsRight: missingPropertiesRight,
+            valuesDiff: valuesDiff
         }
     }
     addFn('diff', diff);
