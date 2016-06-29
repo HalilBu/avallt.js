@@ -69,4 +69,16 @@
         }
     }
     addFn('diff', diff);
+
+    var removeNestedProperty = function(obj, property) {
+        var resultObj = obj;
+        for (var prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                if (prop === property) {
+                    delete resultObj[prop];
+                }
+            }
+        }
+        return resultObj;
+    }
 })()
