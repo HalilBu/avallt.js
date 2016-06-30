@@ -4,6 +4,14 @@
         window.avalltJS[fnName] = fn;
     }
 
+    var isArray = function(value){
+        return toString.call(value) === '[object Array]'
+    }
+
+    var isObject = function(value) {
+        return toString.call(value) === '[object Object]';
+    };
+
     /**
      * Analyses the diff between given objects
      *
