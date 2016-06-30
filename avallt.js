@@ -5,7 +5,7 @@
     }
 
     var isArray = function(value){
-        return toString.call(value) === '[object Array]'
+        return toString.call(value) === '[object Array]';
     }
 
     var isObject = function(value) {
