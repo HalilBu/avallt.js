@@ -98,7 +98,7 @@
      *
      * @param  {Object} obj      source object
      * @param  {String} property property to remove
-     * @return {Object}          [description]
+     * @return {Object}          object, which is freed from given property
      */
     var removeNestedProperty = function(obj, property) {
         for (var prop in obj) {
