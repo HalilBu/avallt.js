@@ -12,6 +12,8 @@
         return toString.call(value) === '[object Object]';
     };
 
+    /*******************************************************************/
+
     /**
      * Analyses the diff between given objects
      *
@@ -78,6 +80,8 @@
     }
     addFn('diff', diff);
 
+    /*******************************************************************/
+
     var _handleObjectProperty = function(item, property) {
         if (isObject(item)) {
             removeNestedProperty(item, property);
@@ -88,6 +92,14 @@
         }
     }
 
+    /**
+     * Frees the source object from given property. It also detects and removes
+     * the given property in nested objects.
+     *
+     * @param  {Object} obj      source object
+     * @param  {String} property property to remove
+     * @return {Object}          [description]
+     */
     var removeNestedProperty = function(obj, property) {
         for (var prop in obj) {
             if (obj.hasOwnProperty(prop)) {
