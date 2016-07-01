@@ -4,7 +4,7 @@
         window.avalltJS[fnName] = fn;
     }
 
-    var isArray = function(value){
+    var isArray = function(value) {
         return toString.call(value) === '[object Array]';
     }
 
@@ -78,15 +78,28 @@
     }
     addFn('diff', diff);
 
+    var _handleObjectProperty = function(item, property) {
+        if (isObject(item)) {
+            removeNestedProperty(item, property);
+        } else if (isArray(item)) {
+            for (var i = 0; i < item.length; i++) {
+                removeNestedProperty(item[i], property);
+            }
+        }
+    }
+
     var removeNestedProperty = function(obj, property) {
-        var resultObj = obj;
         for (var prop in obj) {
             if (obj.hasOwnProperty(prop)) {
                 if (prop === property) {
-                    delete resultObj[prop];
+                    delete obj[prop];
+                } else {
+                    _handleObjectProperty(obj[prop], property);
                 }
             }
         }
-        return resultObj;
+        return obj;
     }
+
+    addFn('removeNestedProperty', removeNestedProperty);
 })()
