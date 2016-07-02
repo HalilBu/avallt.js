@@ -4,10 +4,22 @@
         window.avalltJS[fnName] = fn;
     }
 
+    /**
+     * Determines whether the passed value is an array
+     *
+     * @param  {Object} value   the object to be checked
+     * @return {boolean}        true, if value is an array
+     */
     var isArray = function(value) {
         return toString.call(value) === '[object Array]';
     }
 
+    /**
+     * Determines whether the passed value is an object
+     *
+     * @param  {Object} value   the object to be checked
+     * @return {boolean}        true, if value is an object
+     */
     var isObject = function(value) {
         return toString.call(value) === '[object Object]';
     };
@@ -112,6 +124,9 @@
         }
         return obj;
     }
-
     addFn('removeNestedProperty', removeNestedProperty);
+
+    /*******************************************************************/
+
+
 })()
