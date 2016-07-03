@@ -13,6 +13,7 @@
     var isArray = function(value) {
         return toString.call(value) === '[object Array]';
     }
+    addFn('isArray', isArray);
 
     /**
      * Determines whether the passed value is an object
