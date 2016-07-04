@@ -24,6 +24,7 @@
     var isObject = function(value) {
         return toString.call(value) === '[object Object]';
     };
+    addFn('isObject', isObject);
 
     /*******************************************************************/
 
