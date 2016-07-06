@@ -129,6 +129,4 @@
     addFn('removeNestedProperty', removeNestedProperty);
 
     /*******************************************************************/
-
-
 })()
