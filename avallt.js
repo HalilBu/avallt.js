@@ -129,4 +129,8 @@
     addFn('removeNestedProperty', removeNestedProperty);
 
     /*******************************************************************/
+
+    var searchInObj = function(obj, searchTerm) {
+        
+    }
 })()
