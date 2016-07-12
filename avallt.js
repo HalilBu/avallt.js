@@ -134,11 +134,16 @@
         var resultObj = {};
         for (var prop in obj) {
             if (obj.hasOwnProperty(prop)) {
-                if (prop.indexOf(searchTerm) >= 0) {
+                if (prop.indexOf(searchTerm) >= 0 ) {
+                    resultObj[prop] = obj[prop];
+                }
+                if(typeof obj[prop] === 'string' && obj[prop].indexOf(searchTerm) >= 0){
                     resultObj[prop] = obj[prop];
                 }
             }
         }
         return resultObj;
     }
+    addFn('searchInObj', searchInObj);
+    /*******************************************************************/
 })()
