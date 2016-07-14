@@ -134,11 +134,28 @@
         var resultObj = {};
         for (var prop in obj) {
             if (obj.hasOwnProperty(prop)) {
-                if (prop.indexOf(searchTerm) >= 0 ) {
+                if (prop.indexOf(searchTerm) >= 0) {
                     resultObj[prop] = obj[prop];
                 }
-                if(typeof obj[prop] === 'string' && obj[prop].indexOf(searchTerm) >= 0){
+                if (typeof obj[prop] === 'string' && obj[prop].indexOf(searchTerm) >= 0) {
                     resultObj[prop] = obj[prop];
+                }
+                if (isArray(obj[prop])) {
+                    var resultFromArray = [];
+                    for (var i = 0; i < obj[prop].length; i++) {
+                        if (typeof obj[prop][i] === 'string' && obj[prop].indexOf(searchTerm) >= 0) {
+                            resultFromArray.push(obj[prop][i]);
+                            continue;
+                        }
+                        var tempResult = searchInObj(obj[prop][i], searchTerm);
+
+                        if (JSON.stringify(tempResult) !== JSON.stringify({})) {
+                            resultFromArray.push(tempResult);
+                        }
+                    }
+                    if (resultFromArray.length > 0) {
+                        resultObj[prop] = resultFromArray;
+                    }
                 }
             }
         }
