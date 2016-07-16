@@ -26,6 +26,14 @@
     };
     addFn('isObject', isObject);
 
+    var isString = function(term) {
+        return (typeof term === 'string');
+    };
+
+    var stringContains = function(term, substr) {
+        return term.indexOf(substr) >= 0;
+    };
+
     /*******************************************************************/
 
     /**
@@ -137,13 +145,13 @@
                 if (prop.indexOf(searchTerm) >= 0) {
                     resultObj[prop] = obj[prop];
                 }
-                if (typeof obj[prop] === 'string' && obj[prop].indexOf(searchTerm) >= 0) {
+                if (isString(obj[prop]) && stringContains(obj[prop], searchTerm)) {
                     resultObj[prop] = obj[prop];
                 }
                 if (isArray(obj[prop])) {
                     var resultFromArray = [];
                     for (var i = 0; i < obj[prop].length; i++) {
-                        if (typeof obj[prop][i] === 'string' && obj[prop].indexOf(searchTerm) >= 0) {
+                        if (isString(obj[prop][i]) && stringContains(obj[prop][i], searchTerm)) {
                             resultFromArray.push(obj[prop][i]);
                             continue;
                         }
