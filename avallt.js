@@ -29,6 +29,7 @@
     var isString = function(term) {
         return (typeof term === 'string');
     };
+    addFn('isString', isString);
 
     var stringContains = function(term, substr) {
         return term.indexOf(substr) >= 0;
