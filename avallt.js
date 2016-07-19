@@ -34,6 +34,7 @@
     var stringContains = function(term, substr) {
         return term.indexOf(substr) >= 0;
     };
+    addFn('stringContains', stringContains);
 
     /*******************************************************************/
 
