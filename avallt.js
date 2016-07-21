@@ -32,7 +32,11 @@
     addFn('isString', isString);
 
     var stringContains = function(term, substr) {
-        return term.indexOf(substr) >= 0;
+        if (isString(term)) {
+            return term.indexOf(substr) >= 0;
+        } else {
+            return false;
+        }
     };
     addFn('stringContains', stringContains);
 
