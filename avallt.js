@@ -26,6 +26,12 @@
     };
     addFn('isObject', isObject);
 
+    /**
+     * Determines whether the passed value is a string
+     *
+     * @param  {Object} term  the object to be checked
+     * @return {boolean}      true, if passed value is a string
+     */
     var isString = function(term) {
         return (typeof term === 'string');
     };
