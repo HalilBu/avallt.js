@@ -37,6 +37,13 @@
     };
     addFn('isString', isString);
 
+    /**
+     * Determines whether the term contains the given text
+     *
+     * @param  {String} term   
+     * @param  {String} substr
+     * @return {boolean}       true, if term contains given text
+     */
     var stringContains = function(term, substr) {
         if (isString(term) && isString(substr)) {
             return term.indexOf(substr) >= 0;
