@@ -40,7 +40,7 @@
     /**
      * Determines whether the term contains the given text
      *
-     * @param  {String} term   
+     * @param  {String} term
      * @param  {String} substr
      * @return {boolean}       true, if term contains given text
      */
@@ -157,6 +157,14 @@
 
     /*******************************************************************/
 
+    /**
+     * Searches the given term in the object and returns an object
+     * which contains the result of the search
+     *
+     * @param  {Object} obj        the object to search
+     * @param  {String} searchTerm the search term
+     * @return {Object}            result object
+     */
     var searchInObj = function(obj, searchTerm) {
         var resultObj = {};
         for (var prop in obj) {
