@@ -198,4 +198,8 @@
     }
     addFn('searchInObj', searchInObj);
     /*******************************************************************/
+
+    var mergeObjects = function(obj1, obj2) {
+        
+    }
 })()
