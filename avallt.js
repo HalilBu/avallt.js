@@ -199,7 +199,5 @@
     addFn('searchInObj', searchInObj);
     /*******************************************************************/
 
-    var mergeObjects = function(obj1, obj2) {
-        
-    }
+    var mergeObjects = function(obj1, obj2) {}
 })()
