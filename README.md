@@ -18,6 +18,13 @@ You need to put the [`avalltjs.min.js`](https://github.com/HalilBu/avallt.js/blo
 </html>
 ```
 ### Collection of utility functions
-TBD
+- *diff*
+- *isArray*
+- *isObject*
+- *isString*
+- *removeNestedProperty*
+- *searchInObj*
+- *stringContains*
+
 ## License
 TBD
