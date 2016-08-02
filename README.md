@@ -17,5 +17,7 @@ You need to put the [`avalltjs.min.js`](https://github.com/HalilBu/avallt.js/blo
     </body>
 </html>
 ```
+### Collection of utility functions
+TBD
 ## License
 TBD
