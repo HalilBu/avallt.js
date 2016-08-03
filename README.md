@@ -19,7 +19,7 @@ You need to put the [`avalltjs.min.js`](https://github.com/HalilBu/avallt.js/blo
 ```
 ### Collection of utility functions
 - *diff*
-- *isArray*
+- *isArray(value)*
 - *isObject*
 - *isString*
 - *removeNestedProperty*
