@@ -20,8 +20,8 @@ You need to put the [`avalltjs.min.js`](https://github.com/HalilBu/avallt.js/blo
 ### Collection of utility functions
 - *diff*
 - *isArray(value)*
-- *isObject*
-- *isString*
+- *isObject(value)*
+- *isString(term)*
 - *removeNestedProperty*
 - *searchInObj*
 - *stringContains*
