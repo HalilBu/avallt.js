@@ -199,5 +199,22 @@
     addFn('searchInObj', searchInObj);
     /*******************************************************************/
 
-    var mergeObjects = function(obj1, obj2) {}
+    var mergeObjects = function(obj1, obj2) {
+        var resultObj = {};
+
+        for(var prop in obj2){
+            if(obj2.hasOwnProperty(prop)){
+                resultObj[prop] = obj2[prop];
+            }
+        }
+
+        for(var prop in obj1){
+            if(obj1.hasOwnProperty(prop)){
+                resultObj[prop] = obj1[prop];
+            }
+        }
+
+        return resultObj;
+    }
+    addFn('mergeObjects', mergeObjects);
 })()
