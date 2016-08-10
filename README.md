@@ -25,6 +25,7 @@ You need to put the [`avalltjs.min.js`](https://github.com/HalilBu/avallt.js/blo
 - *removeNestedProperty*
 - *searchInObj*
 - *stringContains*
+- *mergeObjects(obj1, obj2)*
 
 ## License
 TBD
