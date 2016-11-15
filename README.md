@@ -22,7 +22,7 @@ You need to put the [`avalltjs.min.js`](https://github.com/HalilBu/avallt.js/blo
 - *isArray(value)*
 - *isObject(value)*
 - *isString(term)*
-- *removeNestedProperty*
+- *removeNestedProperty(object, property)*
 - *searchInObj*
 - *stringContains*
 - *mergeObjects(obj1, obj2)*
