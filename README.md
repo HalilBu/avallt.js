@@ -4,7 +4,7 @@ AvalltJS is a javascript library which offers a collection of utility functions.
 ## Usage
 You need to put the [`avalltjs.min.js`](https://github.com/HalilBu/avallt.js/blob/master/avallt.min.js) on your website to use the utility functions offered by AvalltJS:
 ```html
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>AvalltJS Demo</title>
